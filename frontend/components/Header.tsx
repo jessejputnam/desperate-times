@@ -4,9 +4,10 @@ import Link from "next/link";
 import Nav from "./Nav";
 
 const LogoStyled = styled.h1`
-  background-color: red;
+  background-color: var(--red, red);
   font-size: 4rem;
   margin-left: 2rem;
+  position: relative;
   z-index: 2;
   transform: skew(-7deg);
 
