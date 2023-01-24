@@ -7,9 +7,9 @@
   "license": "ISC",
   "main": "index.tsx",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next -p 7777",
     "build": "next build",
-    "start": "next start",
+    "start": "next -p 7777 start",
     "test": "NDOE_ENV=test jest --watch",
     "lint": "next lint"
   },
