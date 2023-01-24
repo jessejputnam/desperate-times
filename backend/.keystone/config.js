@@ -58,7 +58,20 @@ var Product = (0, import_core2.list)({
       ui: {
         displayMode: "textarea"
       }
-    })
+    }),
+    status: (0, import_fields2.select)({
+      options: [
+        { label: "Draft", value: "DRAFT" },
+        { label: "Available", value: "AVAILABLE" },
+        { label: "Unavailable", value: "UNAVAILABLE" }
+      ],
+      defaultValue: "DRAFT",
+      ui: {
+        displayMode: "segmented-control",
+        createView: { fieldMode: "hidden" }
+      }
+    }),
+    price: (0, import_fields2.integer)()
   }
 });
 
@@ -168,7 +181,6 @@ var keystone_default = withAuth(
     },
     ui: {
       isAccessAllowed: ({ session: session2 }) => {
-        console.log(session2);
         return !!session2?.data;
       }
     },

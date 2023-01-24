@@ -1,6 +1,5 @@
 import "dotenv/config";
 import { config } from "@keystone-6/core";
-// import { lists } from "./schema";
 import { User } from "./schemas/User";
 import { Product } from "./schemas/Product";
 import { Post } from "./schemas/Post";
@@ -36,7 +35,6 @@ export default withAuth(
     ui: {
       // TODO: Change this for roles
       isAccessAllowed: ({ session }) => {
-        console.log(session);
         return !!session?.data;
       }
     },
