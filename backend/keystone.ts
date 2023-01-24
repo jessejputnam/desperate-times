@@ -1,15 +1,10 @@
 import "dotenv/config";
-// Welcome to Keystone!
-//
-// This file is what Keystone uses as the entry-point to your headless backend
-//
-// Keystone imports the default export of this file, expecting a Keystone configuration object
-//   you can find out more at https://keystonejs.com/docs/apis/config
-
 import { config } from "@keystone-6/core";
-
-// to keep this file tidy, we define our schema in a different file
-import { lists } from "./schema";
+// import { lists } from "./schema";
+import { User } from "./schemas/User";
+import { Product } from "./schemas/Product";
+import { Post } from "./schemas/Post";
+import { Tag } from "./schemas/Tag";
 
 // authentication is configured separately here too, but you might move this elsewhere
 // when you write your list-level access control functions, as they typically rely on session data
@@ -31,7 +26,12 @@ export default withAuth(
       url: "file:./keystone.db",
       idField: { kind: "uuid" }
     },
-    lists,
+    lists: {
+      User,
+      Product,
+      Post,
+      Tag
+    },
     // Show UI only for people who pass this test
     ui: {
       // TODO: Change this for roles
