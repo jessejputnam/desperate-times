@@ -3,13 +3,13 @@ import styled from "styled-components";
 import Link from "next/link";
 import Nav from "./Nav";
 
-const LogoStyled = styled.h1`
+const StyledLogo = styled.h1`
   background-color: var(--red, red);
-  font-size: 4rem;
+  font-size: 3.3rem;
   margin-left: 2rem;
   position: relative;
   z-index: 2;
-  transform: skew(-7deg);
+  transform: skew(-15deg);
 
   a {
     color: white;
@@ -19,13 +19,13 @@ const LogoStyled = styled.h1`
   }
 `;
 
-const HeaderStyled = styled.header`
+const StyledHeader = styled.header`
   .bar {
     border-bottom: 10px solid var(--black, black);
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
   }
 
   .sub-bar {
@@ -37,18 +37,17 @@ const HeaderStyled = styled.header`
 
 export default function Header() {
   return (
-    <HeaderStyled>
+    <StyledHeader>
       <div className='bar'>
-        <LogoStyled>
+        <StyledLogo>
           <Link href='/'>Desperate Times</Link>
-        </LogoStyled>
+        </StyledLogo>
+        <Nav />
       </div>
 
       <div className='sub-bar'>
         <p>Search</p>
       </div>
-
-      <Nav />
-    </HeaderStyled>
+    </StyledHeader>
   );
 }

@@ -1,8 +1,9 @@
-// import { PageProps } from "@/interfaces";
+import Product from "./Product";
 
-import { gql, useQuery } from "@apollo/client";
+import { DocumentNode, gql, useQuery } from "@apollo/client";
+import styled from "styled-components";
 
-const ALL_PRODUCTS_QUERY = gql`
+const ALL_PRODUCTS_QUERY: DocumentNode = gql`
   query ALL_PRODUCTS_QUERY {
     products {
       id
@@ -19,19 +20,24 @@ const ALL_PRODUCTS_QUERY = gql`
   }
 `;
 
+const StyledProductsList = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 60px;
+`;
+
 export default function Products() {
   const { data, error, loading } = useQuery(ALL_PRODUCTS_QUERY);
 
-  console.log(data, error, loading);
   if (loading) return <p>Loaidng...</p>;
   if (error) return <p>Error: {error.message}</p>;
   return (
     <div>
-      <div>
+      <StyledProductsList>
         {data.products.map((product: any) => (
-          <p key={product.id}>{product.name}</p>
+          <Product key={product.id} product={product} />
         ))}
-      </div>
+      </StyledProductsList>
     </div>
   );
 }
