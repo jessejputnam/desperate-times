@@ -88,7 +88,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 3. Install NPM packages (next-with-apollo legacy issues)
    ```sh
-  npm install --legacy-peer-deps
+   npm install --legacy-peer-deps
    ```
 4. Set up cloudinary account
 5. Set up Stripe Account
