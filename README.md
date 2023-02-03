@@ -91,8 +91,7 @@ _Below is an example of how you can instruct your audience on installing and set
   npm install --legacy-peer-deps
    ```
 4. Set up cloudinary account
-5. Set up Stripe Acount
-6. 
+5. Set up Stripe Account
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
