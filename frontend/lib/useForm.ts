@@ -18,7 +18,7 @@ export default function useForm(initial: InputType = {}) {
     let { value, name, type } = e.target;
 
     if (type === "number") value = parseInt(value);
-    // if (type === "file") [value] = e.target.files;
+    if (type === "file") [value] = e.target.files;
 
     setInputs({
       // Copy existing state
