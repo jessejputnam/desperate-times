@@ -36,9 +36,8 @@ export default function CreateProduct() {
 
   async function submit(e: any) {
     e.preventDefault();
-    console.log(inputs);
-    const res = await createProduct();
-    console.log(res);
+    await createProduct();
+    clearForm();
   }
 
   const [createProduct, { loading, error, data }] = useMutation(

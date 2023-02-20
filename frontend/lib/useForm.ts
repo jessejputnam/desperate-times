@@ -1,7 +1,6 @@
 import { ChangeEvent, useState } from "react";
 
 type InputType = Record<string, string | number>;
-// type InputType = Record<string, string | number | [FileList]>;
 
 interface useFormReturn {
   inputs: InputType;
